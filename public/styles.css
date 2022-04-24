@@ -132,7 +132,7 @@ header nav ul li a:hover {
 }
 
 .add p {
-    padding: 10px;
+    margin: auto;
     font-weight: bold;
     font-size: 1.5rem;
 }
