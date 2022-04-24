@@ -1,0 +1,11 @@
+<%- include('./layout/Header') %>
+    <div class="page-container">
+        <h1><%= data.title %> </h1>
+        <p><%= data.date %> </p>
+        <p class="diary-text"><%= data.description %> </p>
+
+        <div class="settings">
+            <a href="/diary/edit/<%= data.id %>" class="edit">Edit</a>
+        </div>
+    </div>
+<%- include('./layout/Footer') %>
