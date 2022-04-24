@@ -5,6 +5,8 @@ const methodOverride = require('method-override');
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 // Set templating engine as ejs
 app.set('view engine', 'ejs');
 
@@ -100,4 +102,4 @@ app.post('/add-to-diary', (req, res) => {
 
 app.use(express.json());
 
-app.listen(3000, () => console.log('Server Started: http://localhost:3000'));
+app.listen(port, () => console.log('Server Started'));
