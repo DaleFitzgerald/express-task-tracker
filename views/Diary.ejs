@@ -1,15 +1,17 @@
 <%- include('./layout/Header') %>
+<a class="backBtn" href="/">Back to Home</a>
+
 <div class="add-container">
     <div class="add">
-        <p>Add to Diary</p>
-        <a href="/add">Add</a>
+        <p>Add to <span class="green">Diary</span></p>
+        <a href="/add">+</a>
     </div>
 
     <div class="diary">
         <% data.forEach((diary) => {%>
             <div class="diary-container">
                 <h3><%= diary.title %></h3>
-                <p><%= diary.date %></p>
+                <p><%= diary.date.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) %></p>
                 <a href="/diary/<%= diary.id %> ">More</a>
             </div>
             <%}) %>

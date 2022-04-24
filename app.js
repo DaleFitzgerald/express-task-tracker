@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
+const path = require('path');
 
 const app = express();
 
@@ -12,6 +13,8 @@ app.set('view engine', 'ejs');
 
 //  Serving static files
 app.use(express.static('public'));
+
+app.use('/tinymce', express.static(path.join(__dirname, 'node_modules', 'tinymce')));
 
 // Body parser middleware
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -102,4 +105,4 @@ app.post('/add-to-diary', (req, res) => {
 
 app.use(express.json());
 
-app.listen(port);
+app.listen(port, console.log('Running on http://localhost:3000/'));
