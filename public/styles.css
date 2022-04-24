@@ -265,3 +265,21 @@ header nav ul li a:hover{
 .delete:hover{
     background-color:  rgb(255, 92, 92);
 }
+
+.backBtn a {
+    display: inline-block;
+    text-decoration: none;
+    color:#fff;
+    padding:10px 40px;
+    background-color: #222;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px #111;
+    margin-top: 20px;
+    transition: 0.5s;
+}
+
+.backBtn a:hover{
+    box-shadow: none;
+    background-color: #333;
+    color: #1cff91;
+}

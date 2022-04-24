@@ -1,4 +1,5 @@
 <%- include('./layout/Header') %>
+<a class="backBtn" href="/diary">Back</a>
 <div class="add-to-diary">
     <h1>Edit <span class="green">Diary </span>Entry</h1>
     <form action="/diary/edit/<%= data.id %>?_method=PUT" method="post">
