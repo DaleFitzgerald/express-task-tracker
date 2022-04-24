@@ -102,4 +102,4 @@ app.post('/add-to-diary', (req, res) => {
 
 app.use(express.json());
 
-app.listen(port, () => console.log('Server Started'));
+app.listen(port);

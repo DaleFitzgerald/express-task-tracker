@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "dev": "nodemon app.js",
+    "start": "serve -s build"
   },
   "author": "",
   "license": "ISC",
@@ -13,7 +14,8 @@
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "method-override": "^3.0.0",
-    "mongoose": "^6.2.8"
+    "mongoose": "^6.2.8",
+    "serve": "^13.0.2"
   },
   "devDependencies": {
     "dotenv": "^16.0.0",
