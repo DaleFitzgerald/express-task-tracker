@@ -30,7 +30,7 @@ mongoose.connect(url, {
 }).then(console.log('Connected to DB')).catch(err => console.log(err));
 
 // Import diary model
-const Diary = require('./models/diary');
+const Diary = require('./models/Diary');
 
 //  ROUTING
 
