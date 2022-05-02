@@ -40,11 +40,13 @@ const Diary = require('./models/diary');
 // Route for forwardslash /
 app.get('/', (req, res) => {
     res.render('Home');
+
 });
 
 //  route for about page
 app.get('/about', (req, res) => {
     res.render('About');
+
 });
 
 // Route for forwardslash /
@@ -53,20 +55,38 @@ app.get('/diary', (req, res) => {
         // console.log(data)
         res.render('Diary', {data: data});
     }).catch(err => console.log(err));
+
 });
 
 // Route for add to diary 
 app.get('/add', (req, res) => {
     res.render('Add');
+
 });
 
+// Route for specific pages
 app.get('/diary/:id', (req, res) => {
     Diary.findOne({_id: req.params.id}).then((data) => {
         res.render('Page', {data: data});
     }).catch(err => console.log(err));
+
 })
 
-// Edit database
+// Route for deleting POST
+app.delete('/:id/', (req, res) => {
+    const { id } = req.params;
+    Diary.find().then(data => {
+        // console.log(data)
+        data = data.filter(post => post.id !== id);
+        data.save().then(() => {
+            res.redirect('/diary');
+        }).catch(err => console.log(err));
+
+    }).catch(err => console.log(err));
+
+});
+
+// Add to database
 app.put('/diary/edit/:id', (req, res) => {
     Diary.findOne({_id: req.params.id}).then((data) => {
         data.title = req.body.title
@@ -78,15 +98,17 @@ app.put('/diary/edit/:id', (req, res) => {
         }).catch(err => console.log(err));
 
     }).catch(err => console.log(err));
+
 });
 
-// Route for editing
+// Route for editing post
 app.get('/diary/edit/:id', (req, res) => {
     Diary.findOne({
         _id: req.params.id
     }).then((data) => {
         res.render('Edit', {data: data});
     }).catch(err => console.log(err));
+
 });
 
 // Route for saving data
@@ -101,6 +123,7 @@ app.post('/add-to-diary', (req, res) => {
     Data.save().then(() => {
         res.redirect('/diary');
     }).catch(err => console.log(err));
+
 });
 
 app.use(express.json());

@@ -3,11 +3,15 @@
 
 <div class="page-container">
     <h1><%= data.title %> </h1>
-    <p><%= data.date.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) %> </p>
+    <p><%= data.date.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) %>
+    </p>
     <p class="diary-text"><%= data.description %> </p>
 
     <div class="settings">
         <a href="/diary/edit/<%= data.id %>" class="edit">Edit</a>
+        <form method="POST" action="/<%= data.id %>?_method=DELETE">
+            <button type="submit" class="remove">Remove</button>
+        </form>
     </div>
 </div>
 <%- include('./layout/Footer') %>
