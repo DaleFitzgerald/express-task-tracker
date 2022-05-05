@@ -7,8 +7,8 @@ const path = require('path');
 
 dotenv.load();
 
-console.log(process.env.NAME);
-console.log(process.env.PASSWORD);
+// console.log(process.env.NAME);
+// console.log(process.env.PASSWORD);
 
 const app = express();
 
@@ -30,9 +30,9 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
 // database URL
-const url = `mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster0.7xbtu.mongodb.net/Diary?retryWrites=true&w=majority`
+const url = `mongodb+srv://${NAME}:${PASSWORD}@cluster0.7xbtu.mongodb.net/Diary?retryWrites=true&w=majority`;
 
-console.log(url);
+// console.log(url);
 
 // Connecting app with database heroku
 mongoose.connect(url, { 
