@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
 // database URL
-const url = `mongodb+srv://${NAME}:${PASSWORD}@cluster0.7xbtu.mongodb.net/Diary?retryWrites=true&w=majority`;
+const url = `mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster0.7xbtu.mongodb.net/Diary?retryWrites=true&w=majority`
 
 // console.log(url);
 
