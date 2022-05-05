@@ -24,9 +24,9 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
 // database URL
-const url = 'mongodb+srv://dale-fitzgerald:quvo3j808RXIc7ml@cluster0.7xbtu.mongodb.net/Diary?retryWrites=true&w=majority'
+const url = `${process.env.MY_MONGODB_URI}.mongodb.net/Diary?retryWrites=true&w=majority`
 
-// Connecting app with databaseheroku
+// Connecting app with database heroku
 mongoose.connect(url, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 

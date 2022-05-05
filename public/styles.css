@@ -106,7 +106,7 @@ header nav ul li a:hover {
     background-color: #222;
     width: 30%;
     overflow: hidden;
-    margin-top: 4%;
+    margin-top: 2%;
     border-radius: 10px;
     display: flex;
     justify-content: space-between;
@@ -195,8 +195,11 @@ header nav ul li a:hover {
 .diary {
     display: grid;
     grid-template-columns: auto auto auto;
-    margin-top: 4%;
-    justify-content: space-between;
+    margin-top: 2%;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: stretch;
+    justify-items: center;
 }
 
 .diary-container {
