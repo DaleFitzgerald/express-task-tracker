@@ -1,11 +1,9 @@
-import dotenv from 'dotenv'
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const path = require('path');
-
-dotenv.config();
 
 const app = express();
 
