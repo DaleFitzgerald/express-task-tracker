@@ -1,14 +1,8 @@
-const dotenv = require('dotenv-extended');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const path = require('path');
-
-dotenv.load();
-
-// console.log(process.env.NAME);
-// console.log(process.env.PASSWORD);
 
 const app = express();
 
@@ -30,7 +24,7 @@ app.use(bodyParser.json());
 app.use(methodOverride('_method'));
 
 // database URL
-const url = `mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster0.7xbtu.mongodb.net/Diary?retryWrites=true&w=majority`
+const url = process.env.MONGODB_URI;
 
 // console.log(url);
 
@@ -136,4 +130,4 @@ app.post('/add-to-diary', (req, res) => {
 
 app.use(express.json());
 
-app.listen(port, console.log('Running on http://localhost:3000/'));
+app.listen(port, console.log(''));
