@@ -1,4 +1,4 @@
-const dotenv = require('dotenv');
+const dotenv = require('dotenv-extended');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
