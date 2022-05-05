@@ -7,6 +7,9 @@ const path = require('path');
 
 dotenv.load();
 
+console.log(process.env.NAME);
+console.log(process.env.PASSWORD);
+
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -28,6 +31,8 @@ app.use(methodOverride('_method'));
 
 // database URL
 const url = `mongodb+srv://${process.env.NAME}:${process.env.PASSWORD}@cluster0.7xbtu.mongodb.net/Diary?retryWrites=true&w=majority`
+
+console.log(url);
 
 // Connecting app with database heroku
 mongoose.connect(url, { 
