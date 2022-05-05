@@ -1,5 +1,5 @@
+const dotenv = require('dotenv');
 const express = require('express');
-import dotenv from ('dotenv');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
